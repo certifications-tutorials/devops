@@ -151,8 +151,20 @@
 </div>
 
 	<!-- Main Video content Start-->
-	<div class="container" style="padding-top:20px;"">
-		
+	<div class="container" style="padding-top:20px;">
+		<div class="row">
+		<div class="col-lg-4">
+			<div class="bar" style="width:100%;">
+				<!-- Create a binding between the searchString model and the text field -->
+				<input type="text" ng-model="searchString" placeholder="Enter your Courses"/>
+			</div>
+			<div class="main">
+			<ul ng-repeat="i in items | searchFor:searchString">
+				<li><a href="{{i.url}}" target=_blank>{{i.title}}</a></li>
+			</ul>
+			</div>
+		</div>
+		<div class="col-lg-8" style="padding-top:35px">
 		<!-- DevOps Section Start-->
 		<div class="panel panel-primary">
 		  <div class="panel-heading">1. What is DevOps</div>
@@ -437,8 +449,8 @@
 			</div>
 		</div>
 		<!-- Kubernetes and Swarm Section End-->
-		
-
+		</div>
+	</div>
 	</div>
 	<!-- Main Video content End-->
 
