@@ -212,7 +212,11 @@ function InstantSearchController($scope){
 			title: 'Nagios Video Gallery',
 			
 		},
-		
+		{
+			url: 'https://www.devopsschool.com/video/perforce/',
+			title: 'Perforce Video Gallery',
+			
+		},
 			
 		
 	];
