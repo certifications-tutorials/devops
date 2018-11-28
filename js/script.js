@@ -217,6 +217,16 @@ function InstantSearchController($scope){
 			title: 'Perforce Video Gallery',
 			
 		},
+		{
+			url: 'https://www.devopsschool.com/video/splunk/',
+			title: 'Splunk Video Gallery',
+			
+		},
+		{
+			url: 'https://www.devopsschool.com/video/terraform/',
+			title: 'Terraform Video Gallery',
+			
+		},
 			
 		
 	];
