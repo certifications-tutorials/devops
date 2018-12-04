@@ -225,7 +225,10 @@ function InstantSearchController($scope){
 		{
 			url: 'https://www.devopsschool.com/video/terraform/',
 			title: 'Terraform Video Gallery',
-			
+		},
+		{
+			url: 'https://www.devopsschool.com/video/datadog/',
+			title: 'Datadog Video Gallery',
 		},
 			
 		
