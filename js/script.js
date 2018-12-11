@@ -230,6 +230,10 @@ function InstantSearchController($scope){
 			url: 'https://www.devopsschool.com/video/datadog/',
 			title: 'Datadog Video Gallery',
 		},
+		{
+			url: 'https://www.devopsschool.com/video/newrelic/',
+			title: 'Newrelic Video Gallery',
+		},
 			
 		
 	];
