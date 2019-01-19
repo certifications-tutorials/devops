@@ -234,6 +234,10 @@ function InstantSearchController($scope){
 			url: 'https://www.devopsschool.com/video/newrelic/',
 			title: 'Newrelic Video Gallery',
 		},
+		{
+			url: 'https://www.devopsschool.com/video/fortify/',
+			title: 'Fortify Video Gallery',
+		},
 			
 		
 	];
