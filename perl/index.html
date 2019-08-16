@@ -1,80 +1,564 @@
-<html>
-<head>
-<meta http-equiv=Content-Type content="text/html;  charset=ISO-8859-1">
-<title>LinuxCBT - Scripting Edition - Perl</title>
-<meta name="generator" content="Theater for Camtasia Studio 1.0.1">
-<script language="JavaScript">
-<!--
-// To load a movie other then the first one listed in the xml file you can pass the number
-// of the movie to load in the "movie" query string parameter.
-// To load the third movie you would do the following:
-//
-// template.html?movie=3
-//
-var param = "";
-var args = new Object();
-var query = location.search.substring(1);     
-// Get query string
-var pairs = query.split(",");
-// Break at comma
-for(var i = 0; i < pairs.length; i++) {
-	var pos = pairs[i].indexOf('=');
-	if (pos == -1) continue; // Look for "name=value"
-	var argname = pairs[i].substring(0,pos); // If not found, skip
-	var value = pairs[i].substring(pos+1); // Extract the name
-	args[argname] = unescape(value); // Extract the value
-}
-if (args.movie) param = "?movieNum=" + parseInt(args.movie);
-//-->
-</script> 
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-</head>
-<body bgcolor="#FFFFFF">
-<table width="859" border="0" cellpadding="0" cellspacing="0">
-  <tr>
-    <td width="1%"><img src="images/crn_toplft.gif" width="58" height="27"></td>
-    <td width="99%" background="images/side_top.gif">&nbsp;</td>
-    <td width="1%"><img src="images/crn_toprt.gif" width="58" height="27"></td>
-  </tr>
-</table>
-<table width="859" border="0" cellpadding="0" cellspacing="0">
-  <tr>
-    <td width="1%" valign="top" background="images/side_left.gif"><img src="images/side_left.gif" width="13" height="126"></td>
-    <td width="99%"><!-- URL's used in the movie-->
-      <!-- text used in the movie-->
-      <script language="JavaScript">
-		<!--
-      		document.write("<object classid=\"clsid:D27CDB6E-AE6D-11cf-96B8-444553540000\"" );
-      		document.write("codebase=\"http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0\"" );
-      		document.write("width=\"833\" height=\"498\" id=\"movie\" align=\"\">" );
-      		document.write("<param name=movie value=\"linuxcbt__se__perl.swf" + param + "\">" );
-      		document.write("<param name=quality value=high>" );
-      		document.write("<param name=bgcolor value=#FFFFFF>" );
-      		document.write("<embed src=\"linuxcbt__se__perl.swf" + param + "\" quality=high bgcolor=#FFFFFF width=\"833\" height=\"498\" name=\"movie\" align=\"\"" );
- 			document.write("type=\"application/x-shockwave-flash\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\" swLiveConnect=\"false\"></embed>");
-      		document.write("</object>");
-      //-->
-	</script>
-	<noscript>
-		<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"
-      		width="833" height="498" id="movie" align="">
-      		<param name=movie value="linuxcbt__se__perl.swf">
-      		<param name=quality value=high>
-      		<param name=bgcolor value=#FFFFFF>
-      		<embed src="linuxcbt__se__perl.swf" quality=high bgcolor=#FFFFFF width="833" height="498" name="movie" align=""
- 			type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" swLiveConnect="false"></embed>
-      	</object>
-	</noscript>
-    </td>
-    <td width="1%" valign="top" background="images/side_rt.gif"><img src="images/side_rt.gif" width="13" height="126"></td>
-  </tr>
-</table>
-<table width="859" border="0" cellpadding="0" cellspacing="0">
-  <tr>
-    <td width="1%"><img src="images/crn_btmlft.gif" width="58" height="31"></td>
-    <td width="99%" background="images/side_btm.gif">&nbsp;</td>
-    <td width="1%"><img src="images/crn_btmrt.gif" width="58" height="31"></td>
-  </tr>
-</table>
-</body>
+    <!-- Favicon -->
+		<link rel="icon" type="image/png" sizes="192x192" href="https://www.devopsschool.com/assets/images/favicon/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="https://www.devopsschool.com/assets/images/favicon/favicon-16x16.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="https://www.devopsschool.com/assets/images/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="https://www.devopsschool.com/assets/images/favicon/favicon-96x96.png">
+		
+		<link rel="stylesheet" href="https://www.devopsschool.com/assets/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://www.devopsschool.com/assets/css/bootstrap.css">
+		<link rel="stylesheet" href="https://www.devopsschool.com/assets/css/style.css">
+		<link rel="stylesheet" href="https://www.devopsschool.com/assets/css/color.css">
+
+    <title>Perl Video Gallery | DevOpsSchool.com</title>
+  </head>
+  <body><div ng-app = "myModule">
+			<div class="count fixed-top d-block d-lg-block mb-2" id="count">
+				<div ng-controller ="myController">
+					<div class="row  no-gutters">
+						<div class="col-lg-6 col-sm-12 col-md-12">
+							<table class="bg-danger text-white text-center pt-4" style="width:100%;">
+								<tbody>
+								  <tr ng-repeat="candidate in candidates | filter:searchtext">
+									<td><a class="text-white" href="{{candidate.link}}" target="_blank">{{candidate.name}}</a><span id="demo1"></span></td>
+								 </tr>
+								</tbody>
+							</table>
+						</div>
+					
+					<div class="col-lg-6 col-sm-12 col-md-12">
+						<table class="bg-danger text-white text-center margin-bottom:1px;" style="width:100%;">
+							<tbody>
+							  <tr ng-repeat="candidates in candidatess | filter:searchtext">
+								<td><a class="text-white" href="{{candidates.link}}" target="_blank">{{candidates.name}}</a><span id="demo2"></span></td>
+							 </tr>
+							</tbody>
+						</table>
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+      <div class="header-top bg-dark sm-text-center mt-4">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-5 col-sm-12 col-md-12">
+                  <div class="text-white">
+                     <ul class="list-inline xs-text-center pt-3 text-white"style="font-size:16px;color:#fff">
+                        <li class="list-inline-item"> <a href="#" class="text-white"><i class="fa fa-phone text-white"></i> +91 700 483 5930</a> </li>
+                        <li class="list-inline-item"> 
+                           <a href="#" class="text-white"><i class="fa fa-envelope-o text-white mr-2"></i> contact@devopsschool.com</a> 
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-lg-2 col-sm-12 col-md-12 pr-0">
+                  <ul class="list-inline pt-3 sm-text-center ">
+                     <li class="list-inline-item px-2"><a href="https://www.facebook.com/DevOpsSchool/" target="_blank"><i class="fa fa-facebook text-white"></i></a></li>
+                     <li class="list-inline-item px-2"><a href="https://twitter.com/DevOpsSchools" target="_blank"><i class="fa fa-twitter text-white"></i></a></li>
+                     <li class="list-inline-item px-2"><a href="https://www.instagram.com/devopsschool/" target="_blank" title="Follow on Instagram"><i class="fa fa-instagram text-white"></i></a></li>
+                     <li class="list-inline-item px-2"><a href="https://www.youtube.com/channel/UCrXr49kBvXJeQMMl2693c4g/featured" target="_blank" title="Subscribe on YouTube"><i class="fa fa-youtube text-white"></i></a></li>
+                  </ul>
+               </div>
+               <div class="col-lg-5 col-sm-12 col-md-12 text-white">
+                  <ul class="list-inline pt-3">
+                     <li class="list-inline-item px-2"> <a href="http://www.devopsschool.com/registration/online/" target="_blank"  class="text-white"><i class="fa fa-edit mr-1"></i>Register Online Course /</a> </li>
+                     <li class="list-inline-item px-2"> 
+                        <a href="http://www.devopsschool.com/registration/classroom/" class="text-white" target="_blank"><i class="fa fa-edit mr-1"></i>Register Classroom Course</a> 
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+      <nav class="navbar navbar-expand-md bg-white navbar-light text-gray-dark-700 sticky-top">
+         <div class="container">
+           
+            <a href="https://www.devopsschool.com/" class="navbar-brand"> <img src="https://www.devopsschool.com/assets/images/logo/logo.png" width="200" height="50" alt=""></a>
+			 <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+               <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                     <a href="https://www.devopsschool.com/" class="nav-link">Home</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                     <a href="https://www.devopsschool.com/tutorial/" class="nav-link dropdown-toggle" data-toggle="dropdown">Tutorials</a>
+                     <div class="dropdown-menu">
+                        <a href="https://www.devopsschool.com/tutorial/" class="dropdown-item">Web Tutorials</a>
+                        <a href="https://www.devopsschool.com/video/" class="dropdown-item">Video Tutorials</a>
+                        <a href="https://www.devopsschool.com/slides/" class="dropdown-item">HTML Slides</a>
+                        <a href="https://www.devopsschool.com/pdf/" class="dropdown-item">PDF Slides</a>
+                        <a href="https://www.devopsschool.com/blog/" class="dropdown-item">Blog</a>
+                     </div>
+                  </li>
+                  <li class="nav-item active">
+                     <a href="https://www.devopsschool.com/courses/" class="nav-link">Courses</a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="https://www.devopsschool.com/events/" class="nav-link">Events</a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="https://www.devopsschool.com/clients/" class="nav-link">Clients</a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="http://www.devopscertification.co/" class="nav-link" target="_blank">Certifications</a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="http://www.devopsschool.com/quiz/" class="nav-link" target="_blank">Quiz</a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="http://www.devopsconsulting.in/" class="nav-link" target="_blank">Consulting</a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="https://www.devopsschool.com/testimonials/" class="nav-link">Testimonials</a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="https://www.devopsschool.com/testimonials/" class="nav-link">Jobs</a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="https://www.devopsschool.com/contact/" class="nav-link">Contact</a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+	<div class="container mt-5 mb-5">
+		<h1 class="mb-3">Perl Video Gallery</h1>
+		<div id="accordion">
+			<div class="card">
+			  <div class="card-header bg-info text-white">
+				<a class="card-link h5" data-toggle="collapse" href="#collapseOne">
+				  Perl Fundamental Video Tutorials
+				</a>
+			  </div>
+			  <div id="collapseOne" class="collapse show" data-parent="#accordion">
+				<div class="card-body">
+				  <!-- video section -->
+					<div class="row mx-auto my-auto">
+						<div class="col-sm-12 col-md-12 col-lg-12 border border-dark rounded py-2">
+						<center><iframe width="720" height="315" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+						</div>
+						
+					</div>
+					
+				  <!-- video section end -->
+				  
+				  <!-- Agenda section  -->
+				  <h4 class="mt-3 bg-cyan-700 text-center py-2">Agenda: Perl Essential Training</h4>
+						<div class="row mx-auto">
+							<div class="col-lg-6 col-md-6 col-sm-12 border border-dark rounded">
+							<h5 class="bg-cyan-900 py-1 text-center mt-2">Perl Quick-Start Guide for Experienced Programmers</h5>
+								<ul>
+									<li>Hello World</li>
+									<li>Counting lines in a file</li>
+									<li>Using a loop in Perl</li>
+									<li>Using subroutines in Perl</li>
+									<li>Using Perl's documentation</li>
+								</ul>
+							</div>
+							
+							<div class="col-lg-6 col-md-6 col-sm-12 border border-dark rounded">
+								<h5 class="bg-cyan-900 py-1 text-center mt-2">General Syntax</h5>
+								<ul>
+									<li>Understanding how Perl uses whitespace</li>
+									<li>Terminating statements with semicolons</li>
+									<li>Creating comments</li>
+									<li>Best practices for formatting code</li>
+								</ul>
+							</div>
+						</div>
+						
+						<!-- row 2 -->
+						<div class="row mx-auto mt-2">
+							<div class="col-lg-6 col-md-6 col-sm-12 border border-dark rounded">
+							<h5 class="bg-cyan-900 py-1 text-center mt-2">Variables and Values</h5>
+								<ul>
+									<li>Understanding values and variables</li>
+									<li>Declaring numeric variables</li>
+									<li>Declaring character string variables</li>
+									<a id="ins1" onClick="install1();" style="cursor: pointer;color:red; font-size:15px"><b>Read More</b></a>
+									<section id="install" style="display:none;">
+									<li>Declaring lists and arrays</li>
+									<li>Pulling slices from arrays</li>
+									<li>Understanding hashes and associative arrays</li>
+									<li>Getting value pairs using the each function</li>
+									<li>Understanding the undef value</li>
+									<a id="ins2" onClick="install2();" style="cursor: pointer;color:red; font-size:15px"><b>Read Less</b></a>
+									</section>
+								</ul>
+							</div>
+							
+							<div class="col-lg-6 col-md-6 col-sm-12 border border-dark rounded">
+								<h5 class="bg-cyan-900 py-1 text-center mt-2">Statements and Blocks</h5>
+								<ul>
+									<li>Assigning values to variables</li>
+									<li>Using statements and expressions</li>
+									<li>Combining statements into blocks</li>
+									<li>Understanding scope</li>
+								</ul>
+							</div>
+						</div>
+						<!-- row 2 end -->
+						
+						<!-- row 3 -->
+						<div class="row mx-auto mt-2">
+							<div class="col-lg-6 col-md-6 col-sm-12 border border-dark rounded">
+							<h5 class="bg-cyan-900 py-1 text-center mt-2">Conditional Statements</h5>
+								<ul>
+									<li>Understanding conditional statements</li>
+									<li>Creating conditionals with if</li>
+									<li>Extending conditionals with else</li>
+									<li>Extending conditionals with elsif</li>
+									<li>Building if statements with postfix conditionals</li>
+									<li>Creating negative conditionals with unless</li>
+									<li>Using the ternary conditional operator</li>
+								</ul>
+							</div>
+							
+							<div class="col-lg-6 col-md-6 col-sm-12 border border-dark rounded">
+								<h5 class="bg-cyan-900 py-1 text-center mt-2">Loops</h5>
+								<ul>
+									<li>Understanding loops</li>
+									<li>Creating loops with while</li>
+									<li>Creating loops with until</li>
+									<li>Iterating lists with foreach</li>
+									<li>Iterating lists with for</li>
+									<li>Using loop control statements</li>
+									<li>Building loops with postfix statements</li>
+								</ul>
+							</div>
+						</div>
+						<!-- row 3 end -->
+						
+				  <!-- Agenda section end -->
+				</div>
+			  </div>
+			</div>
+			<!-- Essential Section End -->
+			
+			<!-- Intermediate Section start -->
+			<div class="card">
+			  <div class="card-header bg-info text-white">
+				<a class="collapsed card-link h5" data-toggle="collapse" href="#collapseTwo">
+				Perl Intermediate Video Tutorials
+			  </a>
+			  </div>
+			  <div id="collapseTwo" class="collapse" data-parent="#accordion">
+				<div class="card-body">
+				  
+				  <div class="text-center mx-auto my-auto border border-dark rounded">
+				  <a class="mx-auto btn btn-outline-success btn-block" href="https://www.devopsschool.com/enroll/form.php?course=Perl+Self-learning+Videos+%28Intermediate%29&fee=2999" target="_">Enroll Now !</a>
+				  </div>
+				  <!-- Agenda section  -->
+				  <h4 class="mt-3 bg-cyan-900 text-center py-2">Agenda: Perl Intermediate Training</h4>
+						
+						<div class="row mx-auto">
+							<div class="col-lg-6 col-md-6 col-sm-12 border border-dark rounded">
+							<h5 class="bg-cyan-900 py-1 text-center mt-2">Special Variables</h5>
+								<ul>
+									<li>Understanding special variables</li>
+									<li>Using special variables</li>
+									<li>Working with special file handles</li>
+									<li>Using special constants</li>
+								</ul>
+							</div>
+							
+							<div class="col-lg-6 col-md-6 col-sm-12 border border-dark rounded">
+								<h5 class="bg-cyan-900 py-1 text-center mt-2">Operators</h5>
+								<ul>
+									<li>Performing basic math with arithmetic operators</li>
+									<li>Creating conditionals with comparison operators</li>
+									<li>Combining conditionals with logical operators</li>
+									<a id="doc1" onClick="docker1();" style="cursor: pointer; color:red; font-size:15px"><b>Read More</b></a>
+									<section id="docker" style="display:none;">
+									<li>Reading file metadata with file test operators</li>
+									<li>Creating a sequence with the range operator</li>
+									<li>Combining strings with the concatenation operator</li>
+									<li>Streamlining strings with quote operators</li>
+									<li>Understanding operator precedence</li>
+									<a id="doc2" onClick="docker2();" style="cursor: pointer;color:red; font-size:15px"><b>Read Less</b></a>
+									</section>
+								</ul>
+							</div>
+						</div>
+						
+						<!-- row 2 -->
+						<div class="row mx-auto mt-2">
+							<div class="col-lg-6 col-md-6 col-sm-12 border border-dark rounded">
+							<h5 class="bg-cyan-900 py-1 text-center mt-2">Regular Expressions</h5>
+								<ul>
+									<li>Understanding regular expressions</li>
+									<li>Searching and replacing text with regular expressions</li>
+									<li>Extracting matches with parentheses</li>
+									<li>Matching wildcards</li>
+									<li>Matching classes of characters</li>
+									<li>Creating arrays with split</li>
+								</ul>
+							</div>
+							
+							<div class="col-lg-6 col-md-6 col-sm-12 border border-dark rounded">
+								<h5 class="bg-cyan-900 py-1 text-center mt-2">Subroutines</h5>
+								<ul>
+									<li>Understanding subroutines</li>
+									<li>Defining and calling subroutines</li>
+									<li>Using arguments with subroutines</li>
+									<li>Understanding scope and "my" variables</li>
+									<li>Returning values from a subroutine</li>
+								</ul>
+							</div>
+						</div>
+						<!-- row 2 end -->
+						
+						<!-- row 3 -->
+						<div class="row mx-auto mt-2">
+							<div class="col-lg-6 col-md-6 col-sm-12 border border-dark rounded">
+							<h5 class="bg-cyan-900 py-1 text-center mt-2">Returning values from a subroutine</h5>
+								<ul>
+									<li>Understanding values and references</li>
+									<li>Defining array references</li>
+									<li>Defining hash references</li>
+									<li>Building mixed data structures</li>
+								</ul>
+							</div>
+							
+							<div class="col-lg-6 col-md-6 col-sm-12 border border-dark rounded">
+								<h5 class="bg-cyan-900 py-1 text-center mt-2">File I/O</h5>
+								<ul>
+									<li>Understanding streams and files</li>
+									<li>Using file handles</li>
+									<li>Using the object-oriented interface for handling files</li>
+									<li>Working with binary files</li>
+								</ul>
+							</div>
+						</div>
+						<!-- row 3 end -->
+						
+				  <!-- Agenda section end -->
+				</div>
+			  </div>
+			</div>
+			<!-- Intermediate Section End -->
+			
+			<!-- Advance Section start -->
+			<div class="card">
+			  <div class="card-header bg-info text-white">
+				<a class="collapsed card-link h5" data-toggle="collapse" href="#collapseThree">
+				 Perl Advance Video Tutorials
+				</a>
+			  </div>
+			  <div id="collapseThree" class="collapse" data-parent="#accordion">
+				<div class="card-body">
+				  
+				  <!-- Video Section-->
+				  <div class="text-center mx-auto my-auto border border-dark rounded">
+				  <a class="mx-auto btn btn-outline-success btn-block" href="https://www.devopsschool.com/enroll/form.php?course=Perl+Self-learning+Videos+%28Advance%29&fee=4999" target="_"> Enroll Now !</a>
+				  </div>
+				  <!-- Video Section End-->
+				  
+				  <!-- Agenda section  -->
+				  <h4 class="mt-3 bg-cyan-900 text-center py-2">Agenda: Perl Advance Training</h4>
+						<div class="row mx-auto">
+							<div class="col-lg-6 col-md-6 col-sm-12 border border-dark rounded">
+							<h5 class="bg-cyan-900 py-1 text-center mt-2">Built-In Functions</h5>
+								<ul>
+									<li>Manipulating strings with built-in functions</li>
+									<li>Working with numbers</li>
+									<li>Manipulating lists and arrays with built-in functions</li>
+									<li>Retrieving and formatting time</li>
+								</ul>
+							</div>
+							
+							<div class="col-lg-6 col-md-6 col-sm-12 border border-dark rounded">
+								<h5 class="bg-cyan-900 py-1 text-center mt-2">Modules</h5>
+								<ul>
+									<li>Leveraging code with modules</li>
+									<li>Understanding object-oriented and procedural modules</li>
+									<li>Creating modules</li>
+									<li>Understanding object and instance data</li>
+									<li>Installing modules from CPAN on Mac and Unix</li>
+									<li>Installing modules from CPAN on Windows</li>
+								</ul>
+							</div>
+						</div>
+						
+						<!-- row 2 -->
+						<div class="row mx-auto mt-2">
+							<div class="col-lg-6 col-md-6 col-sm-12 border border-dark rounded">
+							<h5 class="bg-cyan-900 py-1 text-center mt-2">Documentation with POD</h5>
+								<ul>
+									<li>Understanding POD</li>
+									<li>Documenting with POD</li>
+									<li>Exploring a POD document</li>
+								</ul>
+							</div>
+							
+							<div class="col-lg-6 col-md-6 col-sm-12 border border-dark rounded">
+								<h5 class="bg-cyan-900 py-1 text-center mt-2">New Features in Perl 5.10</h5>
+								<ul>
+									<li>Using Perl 5.10</li>
+									<li>Displaying text with say</li>
+									<li>Selecting from multiple choices with given and when</li>
+									<li>Keeping persistent variables with state</li>
+								</ul>
+							</div>
+						</div>
+						<!-- row 2 end -->
+						
+						<!-- row 3 -->
+						<h5 class="bg-cyan-900 py-1 text-center mt-2">Exploring Web Development</h5>
+						<div class="row mx-auto mt-2">
+							<div class="col-lg-6 col-md-6 col-sm-12 border border-dark rounded">
+							
+								<ul>
+									<li>Exploring CGI</li>
+									<li>Using a database</li>
+								</ul>
+							</div>
+							
+							<div class="col-lg-6 col-md-6 col-sm-12 border border-dark rounded">
+								<ul>
+									<li>Exploring CGI</li>
+									<li>Using a database</li>
+								</ul>
+							</div>
+						</div>
+						<!-- row 3 end -->
+						
+						
+				  <!-- Agenda section end -->
+				</div>
+			  </div>
+			</div>
+		  </div>
+	</div>
+    <!--Footer -->
+      <footer id="footer" class="footer p-5" style="background-color:#212331">
+        
+            <div class="row head pb-2">
+               <div class="col-lg-3 col-md-12 col-sm-12">
+                  <h5 class="text-white text-center border border-left-0 border-right-0  border-top-0 border-success pb-1 mb-2">Address</h5>
+                  <p class="text-white">Cospaze, BVR Lake Front Veerannapalya Main Road,Nagawara, Bangalore 560045</p>
+                  <ul class="list-inline mt-2">
+                     <li class="m-0"> <i class="fa fa-phone text-success  "></i> <a class="text-white" href="#">+91 700 483 5930</a> </li>
+                     <li class="m-0"> <i class="fa fa-envelope-o text-success "></i> <a class="text-white" href="mailto:contact@DevopsSchool.com">contact@devopsschool.com</a> </li>
+                     <li class="m-0"> <i class="fa fa-globe text-success"></i> <a  href="https://www.devopsschool.com" target="_blank" class="text-white">www.devopsschool.com</a> </li>
+                  </ul>
+				  <ul class="nav mb-3">
+                    <li class="nav-item"><a class="nav-link" href="https://www.facebook.com/DevOpsSchool/" target="_blank"><i class="fa fa-facebook text-white border rounded-circle border-success p-2"></i></a></li>
+					<li class="nav-item"><a class="nav-link" href="https://twitter.com/DevOpsSchools" target="_blank"><i class="fa fa-twitter text-white border rounded-circle border-success p-2"></i></a></li>
+					<li class="nav-item"><a class="nav-link" href="https://devopsschool.tumblr.com/" target="_blank"><i class="fa fa-tumblr text-white border rounded-circle border-success p-2"></i></a></li>
+					<li class="nav-item"><a class="nav-link" href="https://www.instagram.com/devopsschool/" target="_blank"><i class="fa fa-instagram text-white border rounded-circle border-success p-2"></i></a></li>
+					<li class="nav-item"><a class="nav-link" href="https://www.youtube.com/channel/UCrXr49kBvXJeQMMl2693c4g" target="_blank" title="Subscribe us on YouTube"><i class="fa fa-youtube text-white border rounded-circle border-success p-2"></i></a></li>
+                  </ul>
+				  <a href="https://www.google.com/search?ei=0BWRW7ilOcn5rQGVhK3oBg&q=devopsschool&oq=devopsschool&gs_l=psy-ab.3..35i39k1l2j0i30k1j0i10i30k1.31510.39761.0.40116.27.18.0.0.0.0.434.2310.0j1j7j0j1.9.0....0...1c.1.64.psy-ab..18.7.1618...0j0i67k1j0i131k1j0i20i263k1j0i10k1.0.jNdpHyy3l58#lrd=0x3bae15d656aeaaab:0xe5ca07dae2353764,3,,," target="_blank"><img src="https://www.devopsschool.com/assets/images/Review_Us_on_Google-White%20(1).png" style="width:150px"></a>
+               </div>
+               <div class="col-lg-2 col-md-12 col-sm-12">
+                  <h5 class="text-white text-center border border-left-0 border-right-0  border-top-0 border-success pb-1 mb-2">Community</h5>
+                  <ul class="list-inline text-center mt-2">
+                     <li class="py-2"><a class="text-white" href="https://groups.google.com/forum/#!forum/devopsschool" target="_blank">Google Groups 1</a></li>
+                     <li class="py-2"><a class="text-white" href="https://groups.google.com/forum/#!forum/cicd" target="_blank">Google Groups 2</a></li>
+                     <li class="py-2"><a class="text-white" href="https://www.linkedin.com/groups/6727934" target="_blank">Linkedin Groups 1</a></li>
+                     <li class="py-2"><a class="text-white" href=" https://www.facebook.com/groups/DevOpsIndia/" target="_blank">Facebook Group 1</a></li>
+                     <li class="py-2"><a class="text-white" href="https://www.facebook.com/groups/DevOpsSchoolCommunity/" target="_blank">Facebook Group 2</a></li>
+                  </ul>
+               </div>
+               <div class="col-lg-2 col-md-12 col-sm-12">
+                  <h5 class="text-white text-center border border-left-0 border-right-0  border-top-0 border-success pb-1 mb-2">Tutorials</h5>
+                  <ul class="list-inline text-center mt-2">
+                     <li class="py-2"><a class="text-white" href="http://www.devopsschool.com/video/" target="_blank">Video Tutorials</a></li>
+                     <li class="py-2"><a class="text-white" href="http://www.devopsschool.com/tutorial/" target="_blank">Web Tutorials</a></li>
+                     <li class="py-2"><a class="text-white" href="http://www.devopsschool.com/tutorial/" target="_blank">HTML Slides Tutorials</a></li>
+                     <li class="py-2"><a class="text-white" href="http://www.devopsschool.com/pdf/" target="_blank">PDF Sides Tutorials</a></li>
+                     <li class="py-2"><a class="text-white" href="http://www.devopsschool.com/quiz/" target="_blank">Quiz</a></li>
+                  </ul>
+               </div>
+               <div class="col-lg-2 col-md-12 col-sm-12">
+                  <h5 class="text-white text-center border border-left-0 border-right-0  border-top-0 border-success pb-1 mb-2">Useful Reference</h5>
+                  <ul class="list-inline text-center mt-2">
+                     <li class="py-2"><a class="text-white" href="http://www.devopsschool.com/community/index.html" target="_blank">DevOps Community</a></li>
+                     <li class="py-2"><a class="text-white" href="https://www.devopsschool.com/support/" target="_blank">DevOps Support</a></li>
+                     <li class="py-2"><a class="text-white" href="http://www.devopstrainer.in/" target="_blank">DevOps Trainer</a></li>
+                     <li class="py-2"><a class="text-white" href="http://www.devopsconsulting.in/" target="_blank">DevOps Consulting</a></li>
+                     <li class="py-2"><a class="text-white" href="https://www.devopsschool.com/news/index.html" target="_blank" title="DevOps News & Events">DevOps News & Events</a></li><li class="py-2"><a class="text-white" href="https://www.devopsschool.com/top10tools/index.html" target="_blank" title="DevOps Top 10 Tools">DevOps Top 10 Tools</a></li>
+                  </ul>
+               </div>
+               <div class="col-lg-2 col-md-12 col-sm-12">
+                  <h5 class="text-white text-center border border-left-0 border-right-0  border-top-0 border-success pb-1 mb-2">Training Events</h5>
+                  <ul class="list-inline text-center mt-2">
+                     <li class="py-2"><a class="text-white" href="https://www.devopsschool.com/courses/" target="_blank">Online Training</a></li>
+                     <li class="py-2"><a class="text-white" href="https://www.devopsschool.com/events/" target="_blank">Classroom Training</a></li>
+                     <li class="py-2"><a class="text-white" href="https://www.devopsschool.com/events/" target="_blank">Free Webinars</a></li>
+                     <li class="py-2"><a class="text-white" href="https://www.devopsschool.com/trainer/" target="_blank">Trainers</a></li>
+                     <li class="py-2"><a class="text-white" href="https://www.devopsschool.com/training/" target="_blank">Training</a></li>
+                  </ul>
+               </div>
+               <div class="col-lg-1 col-md-12 col-sm-12">
+                  <h5 class="text-white text-center border border-left-0 border-right-0  border-top-0 border-success pb-1 mb-2">Links</h5>
+                  <ul class="list-inline text-center mt-2">
+                     <li class="py-2"><a class="text-white" href="http://www.devopsschool.com/about/" target="_blank">About us </a></li>
+                     <li class="py-2"><a class="text-white" href="http://www.devopsschool.com/support/" target="_blank">Support </a></li>
+                     <li class="py-2"><a class="text-white" href="http://www.devopsschool.com/calender/" target="_blank">Calender</a></li>
+                     <li class="py-2"><a class="text-white" href="http://www.devopsschool.com/gallery/" target="_blank">Gallery</a></li>
+                     <li class="py-2"><a class="text-white" href="http://www.devopsschool.com/comparison/" target="_blank">Comparison</a></li>
+                     <li class="py-2"><a class="text-white" href="http://www.devopsschool.com/courses/agenda/index.html" target="_blank">Agenda</a></li><li><a class="text-white" href="https://www.devopsschool.com/path/" target="_blank">Path</a></li>
+                  </ul>
+               </div>
+			   </div>
+			  
+				<div class="row py-2">
+					<div class="col-lg-6">
+					  <ul class="nav float-left">
+						 <li class="nav-item"><a class="nav-link text-white" href="http://www.devopsschool.com/about/refund-policy/" target="_blank" title="DevOpsSchool - Refund Policy">Refund Policy &emsp;|</a></li>
+						 <li class="nav-item"><a class="nav-link text-white" href="http://www.devopsschool.com/about/privacy-policy/" target="_blank" title="DevOpsSchool - Privacy Policy">Privacy Policy &emsp;|</a></li>
+						 <li class="nav-item"><a class="nav-link text-white" href="http://www.devopsschool.com/about/terms-and-conditions/" target="_blank" title="DevOpsSchool - Terms and Condition">Terms and Condition</a></li>
+					  </ul>
+					  </div>
+					  <div class="col-lg-6 float-right text-white">
+					 
+						  <p>Copyright &copy; 2018 DevOpsSchool Inc  All  Rights  Reserved</p>
+					 
+					  </div>
+				</div>
+						
+			 
+      </footer>
+	  <div class="fixed-bottom d-none d-lg-block text-center bg-cyan-900 text-white p-1"><h5><i class="fa fa-phone"></i> &nbsp; Call us on +91 700 483 5930&nbsp;  |&nbsp; +91 700 483 5706 &emsp;<i class="fa fa-envelope-o"> </i> &nbsp; Contact@DevopsSchool.com </h5></div>
+	  
+	  <!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108125931-2"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-108125931-2');
+		</script>
+	  
+      <!--Start of Tawk.to Script-->
+      <script type="text/javascript">
+         var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+         (function(){
+         var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+         s1.async=true;
+         s1.src='https://embed.tawk.to/5a5b2a81d7591465c706baa1/default';
+         s1.charset='UTF-8';
+         s1.setAttribute('crossorigin','*');
+         s0.parentNode.insertBefore(s1,s0);
+         })();
+      </script>
+      <script src="https://www.devopsschool.com/assets/js/jquery.min.js"></script>
+      <script src="https://www.devopsschool.com/assets/js/popper.min.js"></script>
+      <script src="https://www.devopsschool.com/assets/js/bootstrap.min.js"></script>
+	  <script src="https://www.devopsschool.com/assets/js/count.js"></script>
+	  <script src="https://www.devopsschool.com/assets/js/angular.min.js"></script>
+	  <script src="https://www.devopsschool.com/assets/js/script.js"></script>
+	  <script src="https://www.devopsschool.com/assets/js/agenda.js"></script>
+	  
+   </body>
 </html>
