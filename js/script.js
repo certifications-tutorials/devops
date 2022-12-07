@@ -47,209 +47,209 @@ function InstantSearchController($scope){
 	
 	$scope.items = [
 		{
-			url: 'https://www.devopsschool.com/video/ansible/index.html',
+			url: 'ansible/index.html',
 			title: 'Ansible',
 			
 		},
 		{
-			url: 'https://www.devopsschool.com/video/apache-ant/index.html',
+			url: 'apache-ant/index.html',
 			title: 'Apache Ant',
 			
 		},		
 		{
-			url: 'https://www.devopsschool.com/video/apache-maven/index.html',
+			url: 'apache-maven/index.html',
 			title: 'Apache Maven',
 			
 		},
 		{
-			url: 'https://www.devopsschool.com/video/artifactory/index.html',
+			url: 'artifactory/index.html',
 			title: 'Artifactory',
 			
 		},
 		{
-			url: 'https://www.devopsschool.com/video/aws/index.html',
+			url: 'aws/index.html',
 			title: 'Amazon AWS ALL',
 			
 		},
 		{
-			url: 'https://www.devopsschool.com/video/bamboo/index.html',
+			url: 'bamboo/index.html',
 			title: 'Bamboo Video Gallery',
 			
 		},
 		{
-			url: 'https://www.devopsschool.com/video/chef/index.html',
+			url: 'chef/index.html',
 			title: 'Chef Video Gallery',
 			
 		},
 		{
-			url: 'https://www.devopsschool.com/video/datadog/',
+			url: 'datadog/index.html',
 			title: 'Datadog Video Gallery',
 		},
 		{
-			url: 'https://www.devopsschool.com/video/devops/',
+			url: 'devops/index.html',
 			title: 'DevOps Video Gallery',
 		},
 		{
-			url: 'https://www.devopsschool.com/video/docker/index.html',
+			url: 'docker/index.html',
 			title: 'Docker Video Library',
 			
 		},
 		{
-			url: 'https://www.devopsschool.com/video/fortify/',
+			url: 'fortify/index.html',
 			title: 'Fortify Video Gallery',
 		},
 		{
-			url: 'https://www.devopsschool.com/video/git/index.html',
+			url: 'git/index.html',
 			title: 'Git Video Tutorials',
 			
 		},
 		{
-			url: 'https://www.devopsschool.com/video/helix/',
+			url: 'helix/index.html',
 			title: 'Perforce Video Gallery',
 			
 		},
 		{
-			url: 'https://www.devopsschool.com/video/jacoco/index.html',
+			url: 'jacoco/index.html',
 			title: 'Jacoco Video Gallery',
 			
 		},
 		{
-			url: 'https://www.devopsschool.com/video/jenkins/index.html',
+			url: 'jenkins/index.html',
 			title: 'Jenkins Video Library',
 			
 		},
 		{
-			url: 'https://www.devopsschool.com/video/jira/index.html',
+			url: 'jira/index.html',
 			title: 'Jira Video Gallery',
 			
 		},
 		{
-			url: 'https://www.devopsschool.com/video/kubernetes/index.html',
+			url: 'kubernetes/index.html',
 			title: 'Kubernetes Video Gallery',
 			
 		},
 		{
-			url: 'https://www.devopsschool.com/video/linux/index.html',
+			url: 'linux/index.html',
 			title: 'Linux',
 			
 		},
 		{
-			url: 'https://www.devopsschool.com/video/msbuild/index.html',
+			url: 'msbuild/index.html',
 			title: 'MSBuild Essentials',
 			
 		},
 		{
-			url: 'https://www.devopsschool.com/video/nagios/index.html',
+			url: 'nagios/index.html',
 			title: 'Nagios Video Gallery',
 			
 		},
 		{
-			url: 'https://www.devopsschool.com/video/nant/index.html',
+			url: 'nant/index.html',
 			title: 'Nant Video Gallery',
 			
 		},
 		{
-			url: 'https://www.devopsschool.com/video/newrelic/index.html',
+			url: 'newrelic/index.html',
 			title: 'NewRelic Video Gallery',
 			
 		},
 		{
-			url: 'https://www.devopsschool.com/video/nexus/index.html',
+			url: 'nexus/index.html',
 			title: 'Nexus Video Gallery',
 			
 		},
 		{
-			url: 'https://www.devopsschool.com/video/nuget/index.html',
+			url: 'nuget/index.html',
 			title: 'Nuget Video Gallery',
 			
 		},
 		{
-			url: 'https://www.devopsschool.com/video/octopusdeploy/index.html',
+			url: 'octopusdeploy/index.html',
 			title: 'Octopus Deploy Video Gallery',
 			
 		},
 		{
-			url: 'https://www.devopsschool.com/video/packaging/index.html',
+			url: 'packaging/index.html',
 			title: 'Packaging Video Gallery',
 			
 		},
 		{
-			url: 'https://www.devopsschool.com/video/perl/index.html',
+			url: 'perl/index.html',
 			title: 'Perl Video Gallery',
 			
 		},
 		{
-			url: 'https://www.devopsschool.com/video/puppet/index.html',
+			url: 'puppet/index.html',
 			title: 'Puppet Video Gallery',
 			
 		},
 		{
-			url: 'https://www.devopsschool.com/video/sonarqube/index.html',
+			url: 'sonarqube/index.html',
 			title: 'SonarQube Video Gallery',
 			
 		},
 		{
-			url: 'https://www.devopsschool.com/video/splunk/',
+			url: 'splunk/index.html',
 			title: 'Splunk Video Gallery',
 			
 		},
 		{
-			url: 'https://www.devopsschool.com/video/subversion/index.html',
+			url: 'subversion/index.html',
 			title: 'Subversion Video Gallery',
 			
 		},
 		{
-			url: 'https://www.devopsschool.com/video/teamcity/index.html',
+			url: 'teamcity/index.html',
 			title: 'TeamCity Videos Library',
 			
 		},
 		{
-			url: 'https://www.devopsschool.com/video/terraform/',
+			url: 'terraform/index.html',
 			title: 'Terraform Video Gallery',
 		},
 		{
-			url: 'https://www.devopsschool.com/video/tfs/index.html',
+			url: 'tfs/index.html',
 			title: 'Team Foundation Server Videos Library',
 			
 		},
 		{
-			url: 'https://www.devopsschool.com/video/udeploy/index.html',
+			url: 'udeploy/index.html',
 			title: 'UDeploy Essentials',
 			
 		},
 		//extras courses videos
 		{
-			url: 'https://www.devopsschool.com/video/linux/bash-scripting/index.html',
+			url: '',
 			title: 'Bash Scripting',
 			
 		},
 		{
-			url: 'https://www.devopsschool.com/video/devops/DevOps-Essentials.html',
+			url: 'devops/DevOps-Essentials.html',
 			title: 'DevOps Fundamental',
 			
 		},
 		{
-			url: 'https://www.devopsschool.com/video/devops/Complete-CICD-Implementation-from-Scratch.html',
+			url: 'devops/Complete-CICD-Implementation-from-Scratch.html',
 			title: 'Complete CICD Implementation from Scratch',
 			
 		},
 		{
-			url: 'https://www.devopsschool.com/video/devops/cicd-pipeline-using-jenkins.html',
+			url: 'devops/cicd-pipeline-using-jenkins.html',
 			title: 'CICD Pipeline Using Jenkins',
 			
 		},
 		{
-			url: 'https://www.devopsschool.com/video/apache-ant/apache-ant-and-jenkins-fundamental.html',
+			url: 'apache-ant/apache-ant-and-jenkins-fundamental.html',
 			title: 'Apache Ant and Jenkins Fundamental',
 			
 		},
 		{
-			url: 'https://www.devopsschool.com/video/nuget/git-nuget-fundamental.html',
+			url: 'nuget/git-nuget-fundamental.html',
 			title: 'Git and Nuget Fundamental',
 			
 		},
 		{
-			url: 'https://www.devopsschool.com/video/packaging/PackageManagementwithLinux.html',
+			url: 'packaging/PackageManagementwithLinux.html',
 			title: 'Package Management with Linux',
 			
 		},		
