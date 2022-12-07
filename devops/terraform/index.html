@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Favicon -->
+		<link rel="icon" type="image/png" sizes="192x192" href="https://www.devopsschool.com/assets/images/favicon/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="https://www.devopsschool.com/assets/images/favicon/favicon-16x16.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="https://www.devopsschool.com/assets/images/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="https://www.devopsschool.com/assets/images/favicon/favicon-96x96.png">
+		
+		<link rel="stylesheet" href="https://www.devopsschool.com/assets/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://www.devopsschool.com/assets/css/bootstrap.css">
+		<link rel="stylesheet" href="https://www.devopsschool.com/assets/css/style.css">
+		<link rel="stylesheet" href="https://www.devopsschool.com/assets/css/color.css">
+
+    <title>Terraform Video Gallery | DevOpsSchool.com</title>
+  </head>
+  <body><div ng-app = "myModule">
+			<div class="count fixed-top d-block d-lg-block mb-2" id="count">
+				<div ng-controller ="myController">
+					<div class="row  no-gutters">
+						<div class="col-lg-6 col-sm-12 col-md-12">
+							<table class="bg-danger text-white text-center pt-4" style="width:100%;">
+								<tbody>
+								  <tr ng-repeat="candidate in candidates | filter:searchtext">
+									<td><a class="text-white" href="{{candidate.link}}" target="_blank">{{candidate.name}}</a><span id="demo1"></span></td>
+								 </tr>
+								</tbody>
+							</table>
+						</div>
+					
+					<div class="col-lg-6 col-sm-12 col-md-12">
+						<table class="bg-danger text-white text-center margin-bottom:1px;" style="width:100%;">
+							<tbody>
+							  <tr ng-repeat="candidates in candidatess | filter:searchtext">
+								<td><a class="text-white" href="{{candidates.link}}" target="_blank">{{candidates.name}}</a><span id="demo2"></span></td>
+							 </tr>
+							</tbody>
+						</table>
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+      <div class="header-top bg-dark sm-text-center mt-4">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-5 col-sm-12 col-md-12">
+                  <div class="text-white">
+                     <ul class="list-inline xs-text-center pt-3 text-white"style="font-size:16px;color:#fff">
+                        <li class="list-inline-item"> <a href="#" class="text-white"><i class="fa fa-phone text-white"></i> +91 700 483 5930</a> </li>
+                        <li class="list-inline-item"> 
+                           <a href="#" class="text-white"><i class="fa fa-envelope-o text-white mr-2"></i> contact@devopsschool.com</a> 
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-lg-2 col-sm-12 col-md-12 pr-0">
+                  <ul class="list-inline pt-3 sm-text-center ">
+                     <li class="list-inline-item px-2"><a href="https://www.facebook.com/DevOpsSchool/" target="_blank"><i class="fa fa-facebook text-white"></i></a></li>
+                     <li class="list-inline-item px-2"><a href="https://twitter.com/DevOpsSchools" target="_blank"><i class="fa fa-twitter text-white"></i></a></li>
+                     <li class="list-inline-item px-2"><a href="https://www.instagram.com/devopsschool/" target="_blank" title="Follow on Instagram"><i class="fa fa-instagram text-white"></i></a></li>
+                     <li class="list-inline-item px-2"><a href="https://www.youtube.com/channel/UCrXr49kBvXJeQMMl2693c4g/featured" target="_blank" title="Subscribe on YouTube"><i class="fa fa-youtube text-white"></i></a></li>
+                  </ul>
+               </div>
+               <div class="col-lg-5 col-sm-12 col-md-12 text-white">
+                  <ul class="list-inline pt-3">
+                     <li class="list-inline-item px-2"> <a href="http://www.devopsschool.com/registration/online/" target="_blank"  class="text-white"><i class="fa fa-edit mr-1"></i>Register Online Course /</a> </li>
+                     <li class="list-inline-item px-2"> 
+                        <a href="http://www.devopsschool.com/registration/classroom/" class="text-white" target="_blank"><i class="fa fa-edit mr-1"></i>Register Classroom Course</a> 
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+      <nav class="navbar navbar-expand-md bg-white navbar-light text-gray-dark-700 sticky-top">
+         <div class="container">
+           
+            <a href="https://www.devopsschool.com/" class="navbar-brand"> <img src="https://www.devopsschool.com/assets/images/logo/logo.png" width="200" height="50" alt=""></a>
+			 <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+               <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                     <a href="https://www.devopsschool.com/" class="nav-link">Home</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                     <a href="https://www.devopsschool.com/tutorial/" class="nav-link dropdown-toggle" data-toggle="dropdown">Tutorials</a>
+                     <div class="dropdown-menu">
+                        <a href="https://www.devopsschool.com/tutorial/" class="dropdown-item">Web Tutorials</a>
+                        <a href="https://www.devopsschool.com/video/" class="dropdown-item">Video Tutorials</a>
+                        <a href="https://www.devopsschool.com/slides/" class="dropdown-item">HTML Slides</a>
+                        <a href="https://www.devopsschool.com/pdf/" class="dropdown-item">PDF Slides</a>
+                        <a href="https://www.devopsschool.com/blog/" class="dropdown-item">Blog</a>
+                     </div>
+                  </li>
+                  <li class="nav-item active">
+                     <a href="https://www.devopsschool.com/courses/" class="nav-link">Courses</a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="https://www.devopsschool.com/events/" class="nav-link">Events</a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="https://www.devopsschool.com/clients/" class="nav-link">Clients</a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="http://www.devopscertification.co/" class="nav-link" target="_blank">Certifications</a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="http://www.devopsschool.com/quiz/" class="nav-link" target="_blank">Quiz</a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="http://www.devopsconsulting.in/" class="nav-link" target="_blank">Consulting</a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="https://www.devopsschool.com/testimonials/" class="nav-link">Testimonials</a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="https://www.devopsschool.com/testimonials/" class="nav-link">Jobs</a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="https://www.devopsschool.com/contact/" class="nav-link">Contact</a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+	<div class="container mt-5 mb-5">
+		<h1 class="mb-3">Terraform Video Gallery</h1>
+		<div id="accordion">
+			<div class="card">
+			  <div class="card-header bg-info text-white">
+				<a class="card-link h5" data-toggle="collapse" href="#collapseOne">
+				  Terraform Fundamental Video Tutorials
+				</a>
+			  </div>
+			  <div id="collapseOne" class="collapse show" data-parent="#accordion">
+				<div class="card-body">
+				  <!-- video section -->
+					<div class="row mx-auto my-auto">
+						<div class="col-sm-12 col-md-6 col-lg-6 border border-dark rounded py-2">
+						<center><iframe width="480" height="315" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+						</div>
+						
+						<div class="col-sm-12 col-md-6 col-lg-6 border border-dark rounded py-2">
+						<center><iframe width="480" height="315" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+						</div>
+					</div>
+					
+				  <!-- video section end -->
+				  
+				  <!-- Agenda section  -->
+				  <h4 class="mt-3 bg-cyan-700 text-center py-2">Agenda: Terraform Essential Training</h4>
+						<div class="row mx-auto">
+							<div class="col-lg-6 col-md-6 col-sm-12 border border-dark rounded">
+							<h5 class="bg-cyan-900 py-1 text-center mt-2">Deploying Your First Terraform Configuration</h5>
+								<ul>
+									<li>Introduction</li>
+									<li>What's the Scenario?</li>
+									<li>Terraform Components</li>
+									<li>Demo Time!</li>
+								</ul>
+							</div>
+							
+							<div class="col-lg-6 col-md-6 col-sm-12 border border-dark rounded">
+								<h5 class="bg-cyan-900 py-1 text-center mt-2">Updating Your Configuration with More Resources</h5>
+								<ul>
+									<li>Introduction</li>
+									<li>Terraform State and Update</li>
+									<li>What's the Scenario?</li>
+									<li>Data Type and Security Groups</li>
+									<li>Demo Time!</li>
+								</ul>
+							</div>
+						</div>
+						
+				  <!-- Agenda section end -->
+				</div>
+			  </div>
+			</div>
+			<!-- Essential Section End -->
+			
+			<!-- Intermediate Section start -->
+			<div class="card">
+			  <div class="card-header bg-info text-white">
+				<a class="collapsed card-link h5" data-toggle="collapse" href="#collapseTwo">
+				Terraform Intermediate Video Tutorials
+			  </a>
+			  </div>
+			  <div id="collapseTwo" class="collapse" data-parent="#accordion">
+				<div class="card-body">
+				  
+				  <div class="text-center mx-auto my-auto border border-dark rounded">
+				  <a class="mx-auto" href="https://www.devopsschool.com/enroll/form.php?course=Docker+Intermediate+Self-paced+Video&fee=2999" target="_"></a>
+				  </div>
+				  <!-- Agenda section  -->
+				  <h4 class="mt-3 bg-cyan-900 text-center py-2">Agenda: Terraform Intermediate Training</h4>
+						<div class="row mx-auto rounded">
+							<div class="col-lg-6 col-md-6 col-sm-12 border border-dark rounded">
+							
+							<h5 class="bg-cyan-900 py-1 text-center mt-2">Deploying Your First Terraform Configuration</h5>
+								<ul>
+									<li>Introduction</li>
+									<li>What's the Scenario?</li>
+									<li>Terraform Components</li>
+									<li>Demo Time!</li>
+								</ul>
+							</div>
+							
+							<div class="col-lg-6 col-md-6 col-sm-12 border border-dark rounded">
+								
+								<h5 class="bg-cyan-900 py-1 text-center mt-2">Updating Your Configuration with More Resources</h5>
+								<ul>
+									<li>Introduction</li>
+									<li>Terraform State and Update</li>
+									<li>What's the Scenario?</li>
+									<li>Data Type and Security Groups</li>
+									<li>Demo Time!</li>
+								</ul>
+							</div>
+						</div>
+						
+						<!-- row 2 -->
+						<div class="row mx-auto rounded mt-2">
+							<div class="col-lg-6 col-md-6 col-sm-12 border border-dark rounded">
+							
+							<h5 class="bg-cyan-900 py-1 text-center mt-2">Configuring Resources After Creation</h5>
+								<ul>
+									<li>Introduction</li>
+									<li>What's the Scenario?</li>
+									<li>Terraform Provisioners</li>
+									<li>Terraform Syntax</li>
+									<li>Demo Time!</li>
+								</ul>
+							</div>
+							
+							<div class="col-lg-6 col-md-6 col-sm-12 border border-dark rounded">
+								
+								<h5 class="bg-cyan-900 py-1 text-center mt-2">Adding a New Provider to Your Configuration</h5>
+								<ul>
+									<li>Introduction</li>
+									<li>What's the Scenario?</li>
+									<li>Terraform Providers</li>
+									<li>Terraform Functions</li>
+									<a id="dep1" onClick="deeper1();" style="cursor: pointer;color:red;font-size:15px"><b>Read More</b></a>
+									<section id="deeper" style="display:none;">
+									<li>Demo: Intro and Variable</li>
+									<li>Demo: Resource Creation</li>
+									<li>Demo: Deployment and Terraform Console</li>
+									<li>Demo: Updated Deployment and Terraform Commands</li>
+									<a id="dep2" onClick="deeper2();" style="cursor: pointer;color:red;font-size:15px"><b>Read Less</b></a>
+									</section>
+								</ul>
+							</div>
+						</div>
+						<!-- row 2 end -->
+				  <!-- Agenda section end -->
+				</div>
+			  </div>
+			</div>
+			<!-- Intermediate Section End -->
+			
+			<!-- Advance Section start -->
+			<div class="card">
+			  <div class="card-header bg-info text-white">
+				<a class="collapsed card-link h5" data-toggle="collapse" href="#collapseThree">
+				 Terraform Advance Video Tutorials
+				</a>
+			  </div>
+			  <div id="collapseThree" class="collapse" data-parent="#accordion">
+				<div class="card-body">
+				  
+				  <!-- Video Section-->
+				  <div class="text-center mx-auto my-auto border border-dark rounded">
+				  <a class="mx-auto" href="https://www.devopsschool.com/enroll/form.php?course=Docker+Advance+Self-paced+Video&fee=4999" target="_"> </a>
+				  </div>
+				  <!-- Video Section End-->
+				  
+				  <!-- Agenda section  -->
+				  <h4 class="mt-3 bg-cyan-900 text-center py-2">Agenda: Terraform Advance Training</h4>
+						<div class="row mx-auto rounded">
+							<div class="col-lg-6 col-md-6 col-sm-12 border border-dark rounded">
+							
+							<h5 class="bg-cyan-900 py-1 text-center mt-2">Deploying Your First Terraform Configuration</h5>
+								<ul>
+									<li>Introduction</li>
+									<li>What's the Scenario?</li>
+									<li>Terraform Components</li>
+									<li>Demo Time!</li>
+								</ul>
+							</div>
+							
+							<div class="col-lg-6 col-md-6 col-sm-12 border border-dark rounded">
+								
+								<h5 class="bg-cyan-900 py-1 text-center mt-2">Updating Your Configuration with More Resources</h5>
+								<ul>
+									<li>Introduction</li>
+									<li>Terraform State and Update</li>
+									<li>What's the Scenario?</li>
+									<li>Data Type and Security Groups</li>
+									<li>Demo Time!</li>
+								</ul>
+							</div>
+						</div>
+						
+						<!-- row 2 -->
+						<div class="row mx-auto rounded mt-2">
+							<div class="col-lg-6 col-md-6 col-sm-12 border border-dark rounded">
+							
+							<h5 class="bg-cyan-900 py-1 text-center mt-2">Configuring Resources After Creation</h5>
+								<ul>
+									<li>Introduction</li>
+									<li>What's the Scenario?</li>
+									<li>Terraform Provisioners</li>
+									<li>Terraform Syntax</li>
+									<li>Demo Time!</li>
+								</ul>
+							</div>
+							
+							<div class="col-lg-6 col-md-6 col-sm-12 border border-dark rounded">
+								
+								<h5 class="bg-cyan-900 py-1 text-center mt-2">Adding a New Provider to Your Configuration</h5>
+								<ul>
+									<li>Introduction</li>
+									<li>What's the Scenario?</li>
+									<li>Terraform Providers</li>
+									<li>Terraform Functions</li>
+									<a id="div1" onClick="dive1();" style="cursor: pointer;color:red;font-size:15px"><b>Read More</b></a>
+									<section id="dive" style="display:none;">
+									<li>Demo: Intro and Variable</li>
+									<li>Demo: Resource Creation</li>
+									<li>Demo: Deployment and Terraform Console</li>
+									<li>Demo: Updated Deployment and Terraform Commands</li>
+									<a id="div2" onClick="dive2();" style="cursor: pointer;color:red;font-size:15px"><b>Read Less</b></a>
+									</section>
+								</ul>
+							</div>
+						</div>
+						<!-- row 2 end -->
+						
+						<!-- row 3 -->
+						<div class="row mx-auto rounded mt-2">
+							<div class="col-lg-6 col-md-6 col-sm-12 border border-dark rounded">
+							
+							<h5 class="bg-cyan-900 py-1 text-center mt-2">Using Variables in Deployments</h5>
+								<ul>
+									<li>Introduction</li>
+									<li>What's the Scenario?</li>
+									<li>Working with Variables</li>
+									<li>Multiple Environments</li>
+									<li>Demo: Multiple Environments</li>
+									<li>Demo: Deploying the Dev Environment</li>
+									<li>Demo: Deploying the UAT Environment</li>
+								</ul>
+							</div>
+							
+							<div class="col-lg-6 col-md-6 col-sm-12 border border-dark rounded">
+								
+								<h5 class="bg-cyan-900 py-1 text-center mt-2">Using Modules for Common Configurations</h5>
+								<ul>
+									<li>Introduction</li>
+									<li>What's the Scenario?</li>
+									<li>Terraform Modules</li>
+									<li>Demo Time!</li>
+									<li>Demo: Using the Modules</li>
+									<li>Demo: Deploying the Configuration</li>
+								</ul>
+							</div>
+						</div>
+						<!-- row 3 end -->
+						
+						
+				  <!-- Agenda section end -->
+				</div>
+			  </div>
+			</div>
+		  </div>
+	</div>
+    <!--Footer -->
+      <footer id="footer" class="footer p-5" style="background-color:#212331">
+        
+            <div class="row head pb-2">
+               <div class="col-lg-3 col-md-12 col-sm-12">
+                  <h5 class="text-white text-center border border-left-0 border-right-0  border-top-0 border-success pb-1 mb-2">Address</h5>
+                  <p class="text-white">Cospaze, BVR Lake Front Veerannapalya Main Road,Nagawara, Bangalore 560045</p>
+                  <ul class="list-inline mt-2">
+                     <li class="m-0"> <i class="fa fa-phone text-success  "></i> <a class="text-white" href="#">+91 700 483 5930</a> </li>
+                     <li class="m-0"> <i class="fa fa-envelope-o text-success "></i> <a class="text-white" href="mailto:contact@DevopsSchool.com">contact@devopsschool.com</a> </li>
+                     <li class="m-0"> <i class="fa fa-globe text-success"></i> <a  href="https://www.devopsschool.com" target="_blank" class="text-white">www.devopsschool.com</a> </li>
+                  </ul>
+				  <ul class="nav mb-3">
+                    <li class="nav-item"><a class="nav-link" href="https://www.facebook.com/DevOpsSchool/" target="_blank"><i class="fa fa-facebook text-white border rounded-circle border-success p-2"></i></a></li>
+					<li class="nav-item"><a class="nav-link" href="https://twitter.com/DevOpsSchools" target="_blank"><i class="fa fa-twitter text-white border rounded-circle border-success p-2"></i></a></li>
+					<li class="nav-item"><a class="nav-link" href="https://devopsschool.tumblr.com/" target="_blank"><i class="fa fa-tumblr text-white border rounded-circle border-success p-2"></i></a></li>
+					<li class="nav-item"><a class="nav-link" href="https://www.instagram.com/devopsschool/" target="_blank"><i class="fa fa-instagram text-white border rounded-circle border-success p-2"></i></a></li>
+					<li class="nav-item"><a class="nav-link" href="https://www.youtube.com/channel/UCrXr49kBvXJeQMMl2693c4g" target="_blank" title="Subscribe us on YouTube"><i class="fa fa-youtube text-white border rounded-circle border-success p-2"></i></a></li>
+                  </ul>
+				  <a href="https://www.google.com/search?ei=0BWRW7ilOcn5rQGVhK3oBg&q=devopsschool&oq=devopsschool&gs_l=psy-ab.3..35i39k1l2j0i30k1j0i10i30k1.31510.39761.0.40116.27.18.0.0.0.0.434.2310.0j1j7j0j1.9.0....0...1c.1.64.psy-ab..18.7.1618...0j0i67k1j0i131k1j0i20i263k1j0i10k1.0.jNdpHyy3l58#lrd=0x3bae15d656aeaaab:0xe5ca07dae2353764,3,,," target="_blank"><img src="https://www.devopsschool.com/assets/images/Review_Us_on_Google-White%20(1).png" style="width:150px"></a>
+               </div>
+               <div class="col-lg-2 col-md-12 col-sm-12">
+                  <h5 class="text-white text-center border border-left-0 border-right-0  border-top-0 border-success pb-1 mb-2">Community</h5>
+                  <ul class="list-inline text-center mt-2">
+                     <li class="py-2"><a class="text-white" href="https://groups.google.com/forum/#!forum/devopsschool" target="_blank">Google Groups 1</a></li>
+                     <li class="py-2"><a class="text-white" href="https://groups.google.com/forum/#!forum/cicd" target="_blank">Google Groups 2</a></li>
+                     <li class="py-2"><a class="text-white" href="https://www.linkedin.com/groups/6727934" target="_blank">Linkedin Groups 1</a></li>
+                     <li class="py-2"><a class="text-white" href=" https://www.facebook.com/groups/DevOpsIndia/" target="_blank">Facebook Group 1</a></li>
+                     <li class="py-2"><a class="text-white" href="https://www.facebook.com/groups/DevOpsSchoolCommunity/" target="_blank">Facebook Group 2</a></li>
+                  </ul>
+               </div>
+               <div class="col-lg-2 col-md-12 col-sm-12">
+                  <h5 class="text-white text-center border border-left-0 border-right-0  border-top-0 border-success pb-1 mb-2">Tutorials</h5>
+                  <ul class="list-inline text-center mt-2">
+                     <li class="py-2"><a class="text-white" href="http://www.devopsschool.com/video/" target="_blank">Video Tutorials</a></li>
+                     <li class="py-2"><a class="text-white" href="http://www.devopsschool.com/tutorial/" target="_blank">Web Tutorials</a></li>
+                     <li class="py-2"><a class="text-white" href="http://www.devopsschool.com/tutorial/" target="_blank">HTML Slides Tutorials</a></li>
+                     <li class="py-2"><a class="text-white" href="http://www.devopsschool.com/pdf/" target="_blank">PDF Sides Tutorials</a></li>
+                     <li class="py-2"><a class="text-white" href="http://www.devopsschool.com/quiz/" target="_blank">Quiz</a></li>
+                  </ul>
+               </div>
+               <div class="col-lg-2 col-md-12 col-sm-12">
+                  <h5 class="text-white text-center border border-left-0 border-right-0  border-top-0 border-success pb-1 mb-2">Useful Reference</h5>
+                  <ul class="list-inline text-center mt-2">
+                     <li class="py-2"><a class="text-white" href="http://www.devopsschool.com/community/index.html" target="_blank">DevOps Community</a></li>
+                     <li class="py-2"><a class="text-white" href="https://www.devopsschool.com/support/" target="_blank">DevOps Support</a></li>
+                     <li class="py-2"><a class="text-white" href="http://www.devopstrainer.in/" target="_blank">DevOps Trainer</a></li>
+                     <li class="py-2"><a class="text-white" href="http://www.devopsconsulting.in/" target="_blank">DevOps Consulting</a></li>
+                     <li class="py-2"><a class="text-white" href="https://www.devopsschool.com/news/index.html" target="_blank" title="DevOps News & Events">DevOps News & Events</a></li><li class="py-2"><a class="text-white" href="https://www.devopsschool.com/top10tools/index.html" target="_blank" title="DevOps Top 10 Tools">DevOps Top 10 Tools</a></li>
+                  </ul>
+               </div>
+               <div class="col-lg-2 col-md-12 col-sm-12">
+                  <h5 class="text-white text-center border border-left-0 border-right-0  border-top-0 border-success pb-1 mb-2">Training Events</h5>
+                  <ul class="list-inline text-center mt-2">
+                     <li class="py-2"><a class="text-white" href="https://www.devopsschool.com/courses/" target="_blank">Online Training</a></li>
+                     <li class="py-2"><a class="text-white" href="https://www.devopsschool.com/events/" target="_blank">Classroom Training</a></li>
+                     <li class="py-2"><a class="text-white" href="https://www.devopsschool.com/events/" target="_blank">Free Webinars</a></li>
+                     <li class="py-2"><a class="text-white" href="https://www.devopsschool.com/trainer/" target="_blank">Trainers</a></li>
+                     <li class="py-2"><a class="text-white" href="https://www.devopsschool.com/training/" target="_blank">Training</a></li>
+                  </ul>
+               </div>
+               <div class="col-lg-1 col-md-12 col-sm-12">
+                  <h5 class="text-white text-center border border-left-0 border-right-0  border-top-0 border-success pb-1 mb-2">Links</h5>
+                  <ul class="list-inline text-center mt-2">
+                     <li class="py-2"><a class="text-white" href="http://www.devopsschool.com/about/" target="_blank">About us </a></li>
+                     <li class="py-2"><a class="text-white" href="http://www.devopsschool.com/support/" target="_blank">Support </a></li>
+                     <li class="py-2"><a class="text-white" href="http://www.devopsschool.com/calender/" target="_blank">Calender</a></li>
+                     <li class="py-2"><a class="text-white" href="http://www.devopsschool.com/gallery/" target="_blank">Gallery</a></li>
+                     <li class="py-2"><a class="text-white" href="http://www.devopsschool.com/comparison/" target="_blank">Comparison</a></li>
+                     <li class="py-2"><a class="text-white" href="http://www.devopsschool.com/courses/agenda/index.html" target="_blank">Agenda</a></li><li><a class="text-white" href="https://www.devopsschool.com/path/" target="_blank">Path</a></li>
+                  </ul>
+               </div>
+			   </div>
+			  
+				<div class="row py-2">
+					<div class="col-lg-6">
+					  <ul class="nav float-left">
+						 <li class="nav-item"><a class="nav-link text-white" href="http://www.devopsschool.com/about/refund-policy/" target="_blank" title="DevOpsSchool - Refund Policy">Refund Policy &emsp;|</a></li>
+						 <li class="nav-item"><a class="nav-link text-white" href="http://www.devopsschool.com/about/privacy-policy/" target="_blank" title="DevOpsSchool - Privacy Policy">Privacy Policy &emsp;|</a></li>
+						 <li class="nav-item"><a class="nav-link text-white" href="http://www.devopsschool.com/about/terms-and-conditions/" target="_blank" title="DevOpsSchool - Terms and Condition">Terms and Condition</a></li>
+					  </ul>
+					  </div>
+					  <div class="col-lg-6 float-right text-white">
+					 
+						  <p>Copyright &copy; 2018 DevOpsSchool Inc  All  Rights  Reserved</p>
+					 
+					  </div>
+				</div>
+						
+			 
+      </footer>
+	  <div class="fixed-bottom d-none d-lg-block text-center bg-cyan-900 text-white p-1"><h5><i class="fa fa-phone"></i> &nbsp; Call us on +91 700 483 5930&nbsp;  |&nbsp; +91 700 483 5706 &emsp;<i class="fa fa-envelope-o"> </i> &nbsp; Contact@DevopsSchool.com </h5></div>
+	  
+	  <!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108125931-2"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-108125931-2');
+		</script>
+	  
+      <!--Start of Tawk.to Script-->
+      <script type="text/javascript">
+         var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+         (function(){
+         var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+         s1.async=true;
+         s1.src='https://embed.tawk.to/5a5b2a81d7591465c706baa1/default';
+         s1.charset='UTF-8';
+         s1.setAttribute('crossorigin','*');
+         s0.parentNode.insertBefore(s1,s0);
+         })();
+      </script>
+      <script src="https://www.devopsschool.com/assets/js/jquery.min.js"></script>
+      <script src="https://www.devopsschool.com/assets/js/popper.min.js"></script>
+      <script src="https://www.devopsschool.com/assets/js/bootstrap.min.js"></script>
+	  <script src="https://www.devopsschool.com/assets/js/count.js"></script>
+	  <script src="https://www.devopsschool.com/assets/js/angular.min.js"></script>
+	  <script src="https://www.devopsschool.com/assets/js/script.js"></script>
+	  <script src="https://www.devopsschool.com/assets/js/agenda.js"></script>
+	  
+   </body>
+</html>
